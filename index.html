@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <meta name="description" content="SM Video Downloader — link helper for videos you own or are authorized to download.">
+  <title>SM Video Downloader</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="SM Downloader home">
+      <span class="brand-icon">↓</span><span>SM <b>Downloader</b></span>
+    </a>
+    <button id="langBtn" class="ghost" type="button" aria-label="Switch language">বাংলা / EN</button>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow"><span class="pulse"></span> VIDEO & AUDIO LINK TOOL</div>
+      <h1>ভিডিও লিংক <span>সহজে প্রস্তুত করুন</span></h1>
+      <p class="sub">নিজের বা ডাউনলোডের অনুমতি থাকা ভিডিওর লিংক পেস্ট করুন।</p>
+
+      <div class="platforms" aria-label="Supported platforms">
+        <span class="platform pinterest">P Pinterest</span>
+        <span class="platform youtube">▶ YouTube</span>
+        <span class="platform tiktok">♪ TikTok</span>
+        <span class="platform facebook">f Facebook</span>
+        <span class="platform instagram">◎ Instagram</span>
+      </div>
+
+      <div class="panel">
+        <label for="urlInput">ভিডিও লিংক</label>
+        <div class="inputrow">
+          <input id="urlInput" type="url" placeholder="https://... ভিডিও লিংক পেস্ট করুন" autocomplete="url" inputmode="url">
+          <button id="pasteBtn" class="paste-btn" type="button">📋 Paste</button>
+        </div>
+        <div class="actions">
+          <button id="checkBtn" class="primary" type="button">লিংক যাচাই করুন <span>→</span></button>
+          <button id="clearBtn" class="secondary" type="button">মুছুন</button>
+        </div>
+        <p id="status" class="status" role="status" aria-live="polite">Paste চাপলে ক্লিপবোর্ড থেকে লিংক নেওয়ার চেষ্টা করা হবে।</p>
+      </div>
+    </section>
+
+    <section id="result" class="result hidden" aria-live="polite">
+      <div class="result-head">
+        <div><span class="checkmark">✓</span><div class="result-title">লিংক শনাক্ত হয়েছে</div></div>
+        <span id="provider" class="provider-pill">ভিডিও সোর্স</span>
+      </div>
+      <p id="resultUrl" class="url-preview"></p>
+      <div class="notice">
+        <b>ডাউনলোড অপশন কেন দেখাচ্ছে না?</b>
+        <p>এই GitHub Pages সংস্করণটি লিংক শনাক্ত করে। সোশ্যাল প্ল্যাটফর্মের ভিডিও ফাইল/HD/SD/MP3 লিংক পেতে অনুমোদিত API বা সার্ভার প্রয়োজন। কেবল ওয়েবপেজের URL থেকে প্রকৃত ডাউনলোড তৈরি হয় না।</p>
+      </div>
+      <div class="format-grid">
+        <button class="format-card" type="button" data-format="HD Video · MP4"><span class="format-icon">HD</span><b>HD Video</b><small>MP4 · উৎসে থাকলে</small></button>
+        <button class="format-card" type="button" data-format="SD Video · MP4"><span class="format-icon blue">SD</span><b>SD Video</b><small>MP4 · উৎসে থাকলে</small></button>
+        <button class="format-card" type="button" data-format="Audio · MP3"><span class="format-icon gold">♫</span><b>Audio</b><small>MP3 · অনুমোদিত হলে</small></button>
+        <button class="format-card" type="button" data-format="Available formats"><span class="format-icon purple">⋯</span><b>Other quality</b><small>API অনুযায়ী</small></button>
+      </div>
+      <p id="formatStatus" class="status"></p>
+      <a id="openSource" class="open-source" href="#" target="_blank" rel="noopener noreferrer">মূল লিংক খুলুন ↗</a>
+    </section>
+
+    <section class="how">
+      <h2>ব্যবহার করার নিয়ম</h2>
+      <div class="steps">
+        <div><span>01</span><b>লিংক কপি করুন</b><p>নিজের বা অনুমতি পাওয়া ভিডিওর লিংক কপি করুন।</p></div>
+        <div><span>02</span><b>Paste চাপুন</b><p>ক্লিপবোর্ড অনুমতি দিলে লিংক বসে যাবে; না হলে নিজে পেস্ট করুন।</p></div>
+        <div><span>03</span><b>সোর্স যাচাই করুন</b><p>আসল ডাউনলোড অপশনের জন্য অনুমোদিত API যুক্ত করতে হবে।</p></div>
+      </div>
+    </section>
+    <footer>
+      <p>© <span id="year"></span> SM Downloader</p>
+      <p class="fine">কপিরাইট, গোপনীয়তা ও প্রতিটি প্ল্যাটফর্মের শর্ত মেনে ব্যবহার করুন। এই সাইট কোনো ভিডিও হোস্ট করে না।</p>
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
